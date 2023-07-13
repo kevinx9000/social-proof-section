@@ -1,0 +1,208 @@
+/********** MOBILE-FIRST WORKFLOW **********/
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+/* CUSTOM PROPERTIES */
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONTENT */
+body {
+    background: top no-repeat url(images/bg-pattern-top-mobile.svg),
+        bottom no-repeat url(images/bg-pattern-bottom-mobile.svg);
+    font-family: "League Spartan", sans-serif;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* INTRO */
+.intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.intro .heading {
+    color: var(--very-dark-magenta);
+    font-size: 3rem;
+    letter-spacing: -1.25px;
+    margin-bottom: 20px;
+}
+
+.intro .text-info {
+    color: var(--dark-grayish-magenta);
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+/* STAR RATINGS */
+.ratings-container {
+    margin: 40px 0;
+}
+
+.rating-card {
+    background-color: var(--light-grayish-magenta);
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.stars > img {
+    padding: 0 2.5px;
+}
+
+/* TESTIMONIALS */
+.review-card {
+    background-color: var(--very-dark-magenta);
+    color: white;
+    margin: 20px 0;
+    padding: 40px;
+    border-radius: 10px;
+    line-height: 1.25;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.profile > figure {
+    margin-right: 25px;
+}
+
+.review-card .name {
+    font-size: 1rem;
+}
+
+.buyer-photo {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.buyer-status {
+    color: var(--soft-pink);
+}
+
+/* FOOTER */
+footer {
+    margin: 10px;
+    padding: 10px;
+}
+
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE LAYOUT */
+@media only screen and (min-width: 1024px) {
+    body {
+        background: top left no-repeat url(images/bg-pattern-top-desktop.svg),
+            bottom right no-repeat url(images/bg-pattern-bottom-desktop.svg);
+    }
+
+    main {
+        width: 80%;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    /* INTRO */
+    .intro {
+        grid-column: 1 / 2;
+        padding-right: 150px;
+        text-align: left;
+    }
+
+    .intro .heading {
+        font-size: 3.5rem;
+    }
+
+    .intro .text-info {
+        line-height: 1.25;
+    }
+
+    /* STAR RATINGS */
+    .ratings-container {
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .rating-card {
+        width: 80%;
+        flex-direction: row;
+        justify-content: start;
+        margin: 10px 0;
+        font-size: 1.25rem;
+    }
+
+    .rating-card > * {
+        margin-left: 25px;
+    }
+
+    .ratings-container .rating-card:nth-of-type(2) {
+        align-self: center;
+    }
+
+    .ratings-container .rating-card:nth-of-type(3) {
+        align-self: end;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+        width: 100%;
+        min-height: 265px;
+        grid-column: 1/ 3;
+        column-gap: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .testimonials .review-card {
+        max-width: 370px;
+        margin: 0;
+    }
+
+    .testimonials section:nth-of-type(1) {
+        align-self: start;
+    }
+
+    .testimonials section:nth-of-type(2) {
+        align-self: center;
+    }
+
+    .testimonials section:nth-of-type(3) {
+        align-self: end;
+    }
+}
